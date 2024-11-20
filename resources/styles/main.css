@@ -1,0 +1,113 @@
+@import "./fonts.css";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  body {
+    @apply bg-slate-50 font-yekanbakh text-gray-600;
+  }
+}
+@layer components {
+  .content {
+    @apply mx-auto max-w-[1200px] p-3;
+  }
+}
+@layer utilities {
+  .gradient-primary {
+    @apply from-navy-blue via-primary to-secondary;
+  }
+  .placeholder-sm {
+    @apply mx-auto max-w-screen-xl p-4;
+  }
+  .bullet-active-custome {
+    @apply !bg-yellow-500 !opacity-100 transition-all duration-300;
+  }
+}
+.swiper.sw-insta-card {
+  width: 60%;
+  overflow: visible;
+}
+.swiper.sw-insta-card .swiper-slide:not(.swiper-slide-visible) {
+  background-image: none;
+  background-color: rgb(187, 187, 187);
+  opacity: 0.5;
+}
+.footer {
+  clip-path: polygon(
+    50% 0,
+    55% 12%,
+    100% 12%,
+    100% 100%,
+    0 100%,
+    0 12%,
+    45% 12%
+  );
+}
+
+@media only screen and (min-width: 640px) {
+  .swiper.sw-insta-card {
+    width: 320px;
+  }
+  .footer {
+    clip-path: polygon(
+      50% 0,
+      54% 18%,
+      100% 18%,
+      100% 100%,
+      0 100%,
+      0 18%,
+      46% 18%
+    );
+  }
+}
+
+@keyframes jump-right {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes jump-left {
+  0% {
+    right: 0;
+  }
+  50% {
+    right: 100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes jump-top {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 100%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+.jump{
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+  animation-delay: 0.2s;
+  animation-timing-function: ease-out;
+}
+.jump-to-right-animate {
+  animation-name: jump-right;
+}
+.jump-to-left-animate {
+  animation-name: jump-left;
+}
+.jump-to-bottom-animate {
+  animation-name: jump-top;
+}
+
